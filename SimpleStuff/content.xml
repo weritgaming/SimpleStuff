@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<content id="SIMPLE" name="Simple" description="Simple" author="Werit" version="0.1" date="2019-09-03" save="0" enabled="1">
+ <text language="44" name="Simple" description="Simple" author="Werit" />
+</content>

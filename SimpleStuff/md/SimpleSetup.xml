@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<mdscript name="ArgPrivSetup" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="md.xsd">
+	<cues>
+		<cue name="Simple_Setup">
+			<conditions>
+				<event_cue_signalled cue="md.Setup.GameStart"/>
+			</conditions>
+			<actions>
+				<!-- Research is unlocked -->
+				<set_value name="player.entity.$x4ep1_hq_research_unlocked" />
+				<set_value name="$Research" exact="lookup.ware.list" />
+                <do_all exact="$Research.count" counter="$i" reverse="true">
+                    <do_if value="@$Research.{$i}.isresearchable == true">
+                        <add_research ware="$Research.{$i}" />
+                    </do_if>
+                </do_all>
+			</actions>
+		</cue>
+	</cues>
+</mdscript>
